@@ -6,8 +6,6 @@ public class MainApplication {
 		
 		HyperVisor programController = new HyperVisor();
 		programController.Director();
-		PracticeCode practiceCode = new PracticeCode();
-		practiceCode.Test();
 
 	}
 
@@ -27,21 +25,6 @@ class FileHandling {
 	// responsible for reading/writing into files
 	
 	public void importDataFile() {
-		
-	}
-}
-
-class PracticeCode{
-	int a = -999; // special marker value
-	
-	public void Test() {
-		// lets handle some exception without crashing the program
-		try {
-			int a = 1/0;
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println(a);
 		
 	}
 }

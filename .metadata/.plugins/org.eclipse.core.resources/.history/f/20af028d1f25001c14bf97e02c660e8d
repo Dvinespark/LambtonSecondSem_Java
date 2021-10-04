@@ -6,8 +6,6 @@ public class MainApplication {
 		
 		HyperVisor programController = new HyperVisor();
 		programController.Director();
-		PracticeCode practiceCode = new PracticeCode();
-		practiceCode.Test();
 
 	}
 
