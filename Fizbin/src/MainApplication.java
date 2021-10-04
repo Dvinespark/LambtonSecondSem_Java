@@ -38,7 +38,7 @@ class TheTable {
 	
 	public void DisplayTheDeck() {
 		try {
-			FileWriter writer = new FileWriter("C:\\Users\\longe\\Desktop\\2nd Semester\\Java\\JavaProgrammingWorkspace\\Fizbin\\cards-" + (new Date()).getSeconds() + ".txt", true);
+			FileWriter writer = new FileWriter("C:\\Users\\longe\\Desktop\\2nd_Semester\\Java\\JavaProgrammingWorkspace\\Fizbin\\cards-" + (new Date()).getSeconds() + ".txt", true);
 			
 			for (int i = 0; i < deck._cardDeck.size(); i++) {
 				writer.write(deck._cardDeck.get(i).toString());

@@ -1,3 +1,5 @@
+import java.io.*;
+
 
 public class MainApplication {
 
@@ -6,8 +8,8 @@ public class MainApplication {
 		
 		HyperVisor programController = new HyperVisor();
 		programController.Director();
-		PracticeCode practiceCode = new PracticeCode();
-		practiceCode.Test();
+//		PracticeCode practiceCode = new PracticeCode();
+//		practiceCode.Test();
 
 	}
 
@@ -17,14 +19,18 @@ class HyperVisor {
 	// gets called first
 	// issues all the method calls to make the application
 	public void Director() {
-		System.out.println("Hello again");
+		FileHandler fileHandler = new FileHandler();
+		fileHandler.importDataFile();
 		// Import our Data File
 		
 	}
 }
 
-class FileHandling {
+
+
+class FileHandler {
 	// responsible for reading/writing into files
+	String fileName = "C:\\Users\\longe\\Desktop\\2nd_Semester\\Java\\JavaProgrammingWorkspace\\CICSForRealEstate\\Files\\real_state.csv";
 	
 	public void importDataFile() {
 		
