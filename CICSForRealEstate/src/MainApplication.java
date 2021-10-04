@@ -96,5 +96,35 @@ class RealEstateDataRecord {
 	String ExtraDetails;
 	String BasementDescription1;
 	String BasementDescription2;
+	
+	public RealEstateDataRecord(String houseType, String description, String community, double listPrice,
+			double soldPrice, String streetName, String stNumber, int noOfBedroom, int bedPlus, float numberOfBaths,
+			double front, int parkingDriveSpaces, double depth, String garageType, String pool,
+			String remarksForBrokers, String remarksForClients, String extraDetails, String basementDescription1,
+			String basementDescription2) 
+	{
+		HouseType = houseType;
+		Description = description;
+		Community = community;
+		ListPrice = listPrice;
+		SoldPrice = soldPrice;
+		StreetName = streetName;
+		StNumber = stNumber;
+		NoOfBedroom = noOfBedroom;
+		BedPlus = bedPlus;
+		NumberOfBaths = numberOfBaths;
+		Front = front;
+		ParkingDriveSpaces = parkingDriveSpaces;
+		Depth = depth;
+		GarageType = garageType;
+		Pool = pool;
+		RemarksForBrokers = remarksForBrokers;
+		RemarksForClients = remarksForClients;
+		ExtraDetails = extraDetails;
+		BasementDescription1 = basementDescription1;
+		BasementDescription2 = basementDescription2;
+	}
+
+	
 
 }
