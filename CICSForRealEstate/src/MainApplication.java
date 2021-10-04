@@ -30,10 +30,33 @@ class HyperVisor {
 
 class FileHandler {
 	// responsible for reading/writing into files
-	String fileName = "C:\\Users\\longe\\Desktop\\2nd_Semester\\Java\\JavaProgrammingWorkspace\\CICSForRealEstate\\Files\\real_state.csv";
+	String fileName = "C:\\Users\\longe\\Desktop\\2nd_Semester\\Java\\JavaProgrammingWorkspace\\CICSForRealEstate\\Files\\redata.csv";
+	String line = null;
+	
+	
+
 	
 	public void importDataFile() {
-		
+		try {
+			// FileReader reads text files in the default encoding.
+			FileReader fileReader = new FileReader(fileName);
+
+			// Always wrap FileReader in BufferedReader.
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+			while ((line = bufferedReader.readLine()) != null) {
+				System.out.println(line);
+			}
+
+			// Always close files.
+			bufferedReader.close();
+		} catch (FileNotFoundException ex) {
+			System.out.println("Unable to open file '" + fileName + "'");
+		} catch (IOException ex) {
+			System.out.println("Error reading file '" + fileName + "'");
+			// Or we could just do this:
+			// ex.printStackTrace();
+		}
 	}
 }
 
@@ -50,4 +73,28 @@ class PracticeCode{
 		System.out.println(a);
 		
 	}
+}
+
+class RealEstateDataRecord {
+	String HouseType;
+	String Description;
+	String Community;
+	double ListPrice;
+	double SoldPrice;
+	String StreetName;
+	String StNumber;
+	int NoOfBedroom;
+	int BedPlus;
+	float NumberOfBaths;
+	double Front;
+	int ParkingDriveSpaces;
+	double Depth;
+	String GarageType;
+	String Pool;
+	String RemarksForBrokers;
+	String RemarksForClients;
+	String ExtraDetails;
+	String BasementDescription1;
+	String BasementDescription2;
+
 }
