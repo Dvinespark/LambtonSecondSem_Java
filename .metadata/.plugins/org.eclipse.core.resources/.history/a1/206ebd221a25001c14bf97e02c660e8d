@@ -1,0 +1,21 @@
+
+public class MainApplication {
+
+	public static void main(String[] args) {
+		System.out.println("Hello world!");
+		
+		HyperVisor hyperVisor = new HyperVisor();
+
+	}
+
+}
+
+class HyperVisor {
+	// gets called first
+	// issues all the method calls to make the application
+	System.out.println("Hello world!");
+}
+
+class FileHandling {
+	// responsible for reading/writing into files
+}

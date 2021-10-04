@@ -1,0 +1,85 @@
+import java.util.*;
+import java.io.File; // import the file class
+import java.io.FileNotFoundException;	// import this class to handle errors
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class MainApplication {
+
+	public static void main(String[] args) {
+		// Entry point of program
+		System.out.println("Welcome to our game: ");
+		
+		TheTable cardTable = new TheTable();
+		cardTable.GenerateTheCardDeck();
+		cardTable.DisplayTheDeck();
+	}
+}
+
+class TheTable {
+	
+	int CardPositionInDeck = 0;
+	int NameCardPosition = 0;
+	CardDeck deck = new CardDeck();
+	String[] suites = {"Clubs", "Diamonds", "Hearts", "Spades" };
+	
+	
+	public void DisplayTheDeck() {
+		try {
+			FileWriter writer = new FileWriter("c:\\data\\cards-" + (new Date()).getSeconds(), true);
+			
+			for (int i = 0; i < deck._cardDeck.size(); i++) {
+				writer.write(deck._cardDeck.get(i).toString());
+				writer.write("\r\n");
+			}
+			
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void GenerateTheCardDeck() {
+		
+		for (int suiteNumber = 0; suiteNumber < suites.length; suiteNumber++) {
+			populateTheDeck(suiteNumber);
+		}
+	}
+	
+	public void populateTheDeck(int suiteNumber) {
+		deck._cardDeck.add(new Card(suites[suiteNumber], "Ace"));
+		
+		for (int cardValue = 2; cardValue <= 10; cardValue++) {
+			deck._cardDeck.add(new Card(suites[suiteNumber], String.valueOf(cardValue)));
+		}
+		
+		deck._cardDeck.add(new Card(suites[suiteNumber], "Jack"));
+		deck._cardDeck.add(new Card(suites[suiteNumber], "Queen"));
+		deck._cardDeck.add(new Card(suites[suiteNumber], "King"));
+		
+	}
+		
+}
+
+class CardDeck {
+	public ArrayList<Card> _cardDeck = new ArrayList();
+}
+
+class Card {
+	
+	String suite;
+	String faceValue;
+	// Constructor
+	Card(String suite, String faceValue){
+		this.suite = suite;
+		this.faceValue = faceValue;
+		
+	}
+	
+	@Override
+	public String toString() {
+		return this.suite + " " + this.faceValue;
+	}
+	
+}

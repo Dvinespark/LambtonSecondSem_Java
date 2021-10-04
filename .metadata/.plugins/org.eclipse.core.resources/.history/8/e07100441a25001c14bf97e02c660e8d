@@ -1,0 +1,24 @@
+
+public class MainApplication {
+
+	public static void main(String[] args) {
+		System.out.println("Hello world!");
+		
+		HyperVisor programController = new HyperVisor();
+		programController.Director();
+
+	}
+
+}
+
+class HyperVisor {
+	// gets called first
+	// issues all the method calls to make the application
+	public void Director() {
+		System.out.println("Hello again");
+	}
+}
+
+class FileHandling {
+	// responsible for reading/writing into files
+}
